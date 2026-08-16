@@ -118,6 +118,7 @@ body.menu-open{overflow:hidden;}
 @media (max-width:920px){
   .nav-links{display:none;}
   .nav-toggle{display:flex;}
+  .nav-cta{display:none;}
 }
 
 /* ---------- Hero ---------- */
@@ -314,7 +315,7 @@ body.menu-open{overflow:hidden;}
 .floating-contact.open .fc-menu{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
 .fc-menu a{display:flex; align-items:center; gap:10px; background:var(--surface); border:1px solid var(--line); color:var(--text); padding:12px 18px; font-size:.8rem; letter-spacing:.03em; white-space:nowrap; box-shadow:0 8px 24px rgba(0,0,0,.35);}
 .fc-menu a:hover{border-color:var(--gold); color:var(--gold-light);}
-.fc-toggle{width:58px; height:58px; border-radius:50%; background:var(--gold); color:#111; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 26px rgba(0,0,0,.4); transition:transform .3s ease;}
+.fc-toggle{width:58px; height:58px; border-radius:50%; background:#25D366; color:#111; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 26px rgba(0,0,0,.4); transition:transform .3s ease;}
 .fc-toggle:hover{transform:scale(1.06);}
 .fc-toggle svg{width:24px; height:24px;}
 .floating-contact.open .fc-toggle .ic-open{display:none;}
