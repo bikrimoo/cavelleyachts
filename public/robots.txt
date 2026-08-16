@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.cavelleyachts.com/sitemap.xml
