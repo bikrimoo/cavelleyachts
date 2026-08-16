@@ -3,10 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap');
 
 :root{
-  --bg:#0a0c12;
-  --bg-alt:#10121a;
-  --surface:#161822;
-  --surface-2:#1c1e28;
+  --bg:#071A2F;
+  --bg-alt:#0d2038;
+  --surface:#12273f;
+  --surface-2:#182d47;
   --line: rgba(255,255,255,0.09);
   --text:#f4f1ea;
   --text-muted:#a0a8b2;
