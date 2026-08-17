@@ -131,6 +131,11 @@ body.menu-open{overflow:hidden;}
   animation:heroZoom 22s ease-in-out infinite alternate; filter:saturate(1.12) contrast(1.08) brightness(1.05);}
 .hero-media video{width:100%; height:100%; object-fit:cover; object-position:center 30%;
   filter:saturate(1.12) contrast(1.08) brightness(1.05);}
+.hero-video--mobile{display:none;}
+@media (max-width:767px){
+  .hero-video--desktop{display:none;}
+  .hero-video--mobile{display:block;}
+}
 @keyframes heroZoom{from{transform:scale(1);} to{transform:scale(1.08);}}
 .hero-overlay{position:absolute; inset:0; z-index:1;
   background:linear-gradient(180deg, rgba(10,12,18,0.55) 0%, rgba(10,12,18,0.35) 38%, rgba(10,12,18,0.82) 100%);}

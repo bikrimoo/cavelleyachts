@@ -167,4 +167,19 @@
   } else {
     revealEls.forEach(function(el){ el.classList.add('in-view'); });
   }
+
+  /* Responsive Home hero video: load ONLY the video matching the
+     current viewport (desktop 16:9 vs mobile 9:16) so the other one
+     is never requested. */
+  var heroMedia = document.querySelector('.hero > .hero-media');
+  if(heroMedia){
+    var isMobileHero = window.matchMedia('(max-width:767px)').matches;
+    var activeVideo = heroMedia.querySelector(isMobileHero ? '.hero-video--mobile' : '.hero-video--desktop');
+    if(activeVideo && activeVideo.dataset.src && !activeVideo.getAttribute('src')){
+      activeVideo.setAttribute('src', activeVideo.dataset.src);
+      activeVideo.load();
+      var heroPlay = activeVideo.play();
+      if(heroPlay && typeof heroPlay.catch === 'function'){ heroPlay.catch(function(){}); }
+    }
+  }
 })();
