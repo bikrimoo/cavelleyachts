@@ -294,3 +294,13 @@ html[dir="rtl"] .step .idx,
 html[dir="rtl"] .feature-grid .num{
   direction: ltr;
 }
+
+/* RTL form select adjustments */
+.form-grid select,.form-field select{
+  background-position:left 14px center;
+  padding-right:14px;
+  padding-left:36px;
+}
+.form-section-label{
+  text-align:right;
+}

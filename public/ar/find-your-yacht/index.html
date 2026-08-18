@@ -90,21 +90,75 @@
   <div class="container">
     <div class="section-head center"><span class="eyebrow">أخبرنا بما تحتاجه</span><h2 class="h2">شاركونا متطلباتكم</h2><p class="lead">كلما شاركتنا تفاصيل أكثر، كلما استطعنا ربطك بالفرصة المناسبة بشكل أفضل.</p></div>
     <div style="max-width:760px; margin:0 auto;">
-<form name="yacht-inquiry" method="POST" data-netlify="true" data-netlify-form netlify-honeypot="bot-field" action="/thank-you/">
+<form name="yacht-inquiry" method="POST" data-netlify="true" data-netlify-form netlify-honeypot="bot-field" action="/ar/thank-you/">
   <input type="hidden" name="form-name" value="yacht-inquiry">
   <p class="visually-hidden"><label>لا تملأ هذا الحقل: <input name="bot-field"></label></p>
-  <div class="form-grid">
-    <div class="form-field"><label for="full_name">الاسم الكامل</label><input type="text" id="full_name" name="full_name" required></div>
-    <div class="form-field"><label for="email">البريد الإلكتروني</label><input type="email" id="email" name="email" required></div>
-    <div class="form-field"><label for="budget">الميزانية (اختياري)</label><input type="text" id="budget" name="budget" placeholder="مثال: 400,000 &ndash; 600,000 دولار أمريكي"></div>
-    <div class="form-field"><label for="phone">رقم الهاتف</label><input type="tel" id="phone" name="phone" required></div>
-    <div class="form-field full"><label for="country">الدولة</label><input type="text" id="country" name="country" required></div>
-    <div class="form-field full"><label for="message">الرسالة (اختياري)</label><input type="text" id="message" name="message" placeholder="صف الحجم أو التخطيط أو التصميم أو الاستخدام المقصود الذي تبحث عنه"></div>
+
+  <div class="form-group">
+    <p class="form-section-label">بياناتك</p>
+    <div class="form-grid">
+      <div class="form-field"><label for="full_name">الاسم الكامل</label><input type="text" id="full_name" name="full_name" required></div>
+      <div class="form-field"><label for="email">البريد الإلكتروني</label><input type="email" id="email" name="email" required></div>
+      <div class="form-field"><label for="phone">رقم الهاتف</label><input type="tel" id="phone" name="phone" required></div>
+      <div class="form-field"><label for="country">الدولة / الموقع المقصود</label><input type="text" id="country" name="country" required></div>
+    </div>
   </div>
-  <div class="cta-row"><button type="submit" class="btn btn-primary">طلب معلومات اليخت</button></div>
-  <p class="form-note">يُستخدم رقم هاتفك فقط من قبل فريق المبيعات لدينا للمتابعة بشأن استفسارك ولا يتم عرضه علنًا أبداً. بإرسال هذا النموذج، فإنك توافق على التواصل معك بشأن استفسارك.</p>
+
+  <div class="form-group">
+    <p class="form-section-label">متطلباتك</p>
+    <div class="form-grid">
+      <div class="form-field"><label for="looking_for">ماذا تبحث عنه؟</label>
+        <select id="looking_for" name="looking_for" required>
+          <option value="">اختر خياراً</option>
+          <option value="Private Yacht">يخت خاص</option>
+          <option value="Floating Villa">فيلا عائمة</option>
+          <option value="Houseboat">قارب سكني</option>
+          <option value="Floating Restaurant">مطعم عائم</option>
+          <option value="Floating Cafe">مقهى عائم</option>
+          <option value="Floating Resort">منتجع عائم</option>
+          <option value="Hospitality Vessel">سفينة ضيافة</option>
+          <option value="Investment">استثمار</option>
+          <option value="Other">أخرى</option>
+        </select>
+      </div>
+      <div class="form-field"><label for="budget_range">الميزانيية</label>
+        <select id="budget_range" name="budget_range" required>
+          <option value="">اختر نطاقاً</option>
+          <option value="Under $500K">أقل من 500 ألف دولار</option>
+          <option value="$500K – $1M">500 ألف – مليون دولار</option>
+          <option value="$1M – $3M">مليون – 3 ملايين دولار</option>
+          <option value="$3M+">أكثر من 3 ملايين دولار</option>
+        </select>
+      </div>
+      <div class="form-field"><label for="preferred_length">الطول المفضل</label>
+        <select id="preferred_length" name="preferred_length" required>
+          <option value="">اختر نطاقاً</option>
+          <option value="Under 12m">أقل من 12 متر</option>
+          <option value="15 – 25m">15 – 25 متر</option>
+          <option value="25 – 40m">25 – 40 متر</option>
+          <option value="40m+">40 متر وأكثر</option>
+        </select>
+      </div>
+      <div class="form-field"><label for="purchase_timeline">الاستعداد للشراء</label>
+        <select id="purchase_timeline" name="purchase_timeline" required>
+          <option value="">اختر الإطار الزمني</option>
+          <option value="Immediately">فورته</option>
+          <option value="1 – 3 months">شهر كامل الثلاثة الأوسطى</option>
+          <option value="3 – 6 months">3 – 6 أشهر</option>
+          <option value="Exploring">قيالة الاستكشاف</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-field full"><label for="message">تفاصيل إضافية (اختياري)</label><input type="text" id="message" name="message" placeholder="اذكر أي متطلبات محددة أو تفضيلات تصميمية أو استخدام مقصود"></div>
+  </div>
+
+  <div class="cta-row"><button type="submit" class="btn btn-primary">إرسال المتطلبات</button></div>
+  <p class="form-note">معلوماتك يستخدمها فريق المبيعات للمتابعة طلبك فقط ولا يعرض علناً أبداً. بإرسالك هذا النموذج، توافق على تواصل فريقنا معك بشأن طلبك.</p>
 </form>
-<div class="form-success">شكراً لك &mdash; تم استلام استفسارك. وسيتواصل معك فريق المبيعات لدينا في أقرب وقت. يمكنك أيضاً التواصل معنا مباشرة عبر واتساب أو تليجرام باستخدام الزر الموجود في زاوية الشاشة.</div>
+<div class="form-success">شكراً لك — تم استلام طلبك. سيتواصل معك فريق المبيعات لدينا قريباً. يملك أيضاً التواصل معنا مباشرة عبر واتساب أو تليجرام باستخدام الزر في زاوية الشاشة.</div>
 </div>
   </div>
 </section>

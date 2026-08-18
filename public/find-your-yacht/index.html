@@ -94,18 +94,72 @@
 <form name="yacht-inquiry" method="POST" data-netlify="true" data-netlify-form netlify-honeypot="bot-field" action="/thank-you/">
   <input type="hidden" name="form-name" value="yacht-inquiry">
   <p class="visually-hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
-  <div class="form-grid">
-    <div class="form-field"><label for="full_name">Full Name</label><input type="text" id="full_name" name="full_name" required></div>
-    <div class="form-field"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
-    <div class="form-field"><label for="budget">Budget (Optional)</label><input type="text" id="budget" name="budget" placeholder="e.g. USD 400,000 &ndash; 600,000"></div>
-    <div class="form-field"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" required></div>
-    <div class="form-field full"><label for="country">Country</label><input type="text" id="country" name="country" required></div>
-    <div class="form-field full"><label for="message">Message (Optional)</label><input type="text" id="message" name="message" placeholder="Describe the size, layout, design or intended use you are looking for"></div>
+
+  <div class="form-group">
+    <p class="form-section-label">Your Details</p>
+    <div class="form-grid">
+      <div class="form-field"><label for="full_name">Full Name</label><input type="text" id="full_name" name="full_name" required></div>
+      <div class="form-field"><label for="email">Email</label><input type="email" id="email" name="email" required></div>
+      <div class="form-field"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" required></div>
+      <div class="form-field"><label for="country">Country / Intended Location</label><input type="text" id="country" name="country" required></div>
+    </div>
   </div>
-  <div class="cta-row"><button type="submit" class="btn btn-primary">Request Yacht Information</button></div>
-  <p class="form-note">Your phone number is used only by our sales team to follow up on your enquiry and is never displayed publicly. By submitting, you agree to be contacted regarding your enquiry.</p>
+
+  <div class="form-group">
+    <p class="form-section-label">Your Requirements</p>
+    <div class="form-grid">
+      <div class="form-field"><label for="looking_for">What Are You Looking For?</label>
+        <select id="looking_for" name="looking_for" required>
+          <option value="">Select an option</option>
+          <option value="Private Yacht">Private Yacht</option>
+          <option value="Floating Villa">Floating Villa</option>
+          <option value="Houseboat">Houseboat</option>
+          <option value="Floating Restaurant">Floating Restaurant</option>
+          <option value="Floating Cafe">Floating CafÃ©</option>
+          <option value="Floating Resort">Floating Resort</option>
+          <option value="Hospitality Vessel">Hospitality Vessel</option>
+          <option value="Investment">Investment</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-field"><label for="budget_range">Budget</label>
+        <select id="budget_range" name="budget_range" required>
+          <option value="">Select a range</option>
+          <option value="Under $500K">Under $500K</option>
+          <option value="$500K â $1M">$500K â $1M</option>
+          <option value="$1M â $3M">$1M â $3M</option>
+          <option value="$3M+">$3M+</option>
+        </select>
+      </div>
+      <div class="form-field"><label for="preferred_length">Preferred Length</label>
+        <select id="preferred_length" name="preferred_length" required>
+          <option value="">Select a range</option>
+          <option value="Under 12m">Under 12m</option>
+          <option value="15 â 25m">15 â 25m</option>
+          <option value="25 â 40m">25 â 40m</option>
+          <option value="40m+">40m+</option>
+        </select>
+      </div>
+      <div class="form-field"><label for="purchase_timeline">Ready to Purchase</label>
+        <select id="purchase_timeline" name="purchase_timeline" required>
+          <option value="">Select a timeline</option>
+          <option value="Immediately">Immediately</option>
+          <option value="1 â 3 months">1 â 3 months</option>
+          <option value="3 â 6 months">3 â 6 months</option>
+          <option value="Exploring">Exploring</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="form-field full"><label for="message">Additional Details (Optional)</label><input type="text" id="message" name="message" placeholder="Describe any specific requirements, design preferences or intended use"></div>
+  </div>
+
+  <div class="cta-row"><button type="submit" class="btn btn-primary">Submit Requirements</button></div>
+  <p class="form-note">Your information is used only by our sales team to follow up on your enquiry and is never displayed publicly. By submitting, you agree to be contacted regarding your enquiry.</p>
 </form>
-<div class="form-success">Thank you &mdash; your enquiry has been received. Our sales team will be in touch shortly. You can also reach us directly on WhatsApp or Telegram using the button in the corner of your screen.</div>
+<div class="form-success">Thank you â your enquiry has been received. Our sales team will be in touch shortly. You can also reach us directly on WhatsApp or Telegram using the button in the corner of your screen.</div>
 </div>
   </div>
 </section>
