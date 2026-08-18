@@ -1,8 +1,6 @@
 /* CavelleYachts — RTL & Arabic Typography Styles
    Loaded only on Arabic pages, layered on top of existing design system */
 
-/* Arabic Font Imports — Amiri (serif headings) + Noto Sans Arabic (body) */
-@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
 
 /* ===== Arabic Typography ===== */
 html[lang="ar"] body,
@@ -308,4 +306,15 @@ html[dir="rtl"] .feature-grid .num{
 }
 .form-section-label{
   text-align:right;
+}
+
+/* Mobile RTL: ensure reveal content is always visible
+   The @import was removed (fonts already loaded via <link> in HTML head).
+   On Arabic + Mobile, the IntersectionObserver in main.min.js may not fire
+   in time due to CSS loading cascade. This fallback ensures content is visible. */
+@media (max-width: 920px){
+  html[dir="rtl"] .reveal{
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

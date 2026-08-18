@@ -168,4 +168,11 @@
     revealEls.forEach(function(el){ el.classList.add('in-view'); });
   }
 
+  /* Fallback: ensure reveal elements become visible after 3 seconds,
+     even if IntersectionObserver fails (e.g., CSS loading delays on mobile RTL) */
+  setTimeout(function(){
+    document.querySelectorAll(".reveal:not(.in-view)").forEach(function(el){
+      el.classList.add("in-view");
+    });
+  }, 3000);
 })();
