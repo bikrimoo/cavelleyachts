@@ -42,11 +42,12 @@ html[lang="ar"] .eyebrow{
 
 /* ===== RTL Layout Flips ===== */
 
-/* Header / Nav */
+/* Header / Nav — logo stays anchored left, do NOT reverse nav-inner */
 html[dir="rtl"] .nav-inner{
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
+/* Nav links still read right-to-left (Arabic reading order) */
 html[dir="rtl"] .nav-links{
   flex-direction: row-reverse;
 }
@@ -61,9 +62,10 @@ html[dir="rtl"] .nav-links a.active::after{
   left: auto;
 }
 
-/* Logo — keep brand name LTR but align right */
+/* Logo — always left-aligned, LTR direction for Latin brand text */
 html[dir="rtl"] .logo{
-  text-align: right;
+  text-align: left;
+  direction: ltr;
 }
 
 /* Breadcrumbs */
