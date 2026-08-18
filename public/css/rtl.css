@@ -42,14 +42,17 @@ html[lang="ar"] .eyebrow{
 
 /* ===== RTL Layout Flips ===== */
 
-/* Header / Nav — logo stays anchored left, do NOT reverse nav-inner */
+/* Header / Nav — force LTR layout so logo stays left, but keep nav links RTL */
 html[dir="rtl"] .nav-inner{
+  direction: ltr;
   flex-direction: row;
 }
 
-/* Nav links still read right-to-left (Arabic reading order) */
+/* Nav links: RTL reading order with proper Arabic text direction */
+html[dir="rtl"] nav[aria-label],
 html[dir="rtl"] .nav-links{
-  flex-direction: row-reverse;
+  direction: rtl;
+  flex-direction: row;
 }
 
 html[dir="rtl"] .nav-cta{
