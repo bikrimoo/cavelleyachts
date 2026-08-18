@@ -1,0 +1,296 @@
+/* CavelleYachts — RTL & Arabic Typography Styles
+   Loaded only on Arabic pages, layered on top of existing design system */
+
+/* Arabic Font Imports — Amiri (serif headings) + Noto Sans Arabic (body) */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+
+/* ===== Arabic Typography ===== */
+html[lang="ar"] body,
+html[lang="ar"] input,
+html[lang="ar"] select,
+html[lang="ar"] textarea,
+html[lang="ar"] button{
+  font-family: 'Noto Sans Arabic', 'Jost', -apple-system, sans-serif;
+}
+
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[lang="ar"] h5,
+html[lang="ar"] .h1,
+html[lang="ar"] .h2,
+html[lang="ar"] .h3,
+html[lang="ar"] .logo,
+html[lang="ar"] .mobile-menu a{
+  font-family: 'Amiri', 'Playfair Display', Georgia, serif;
+}
+
+/* Arabic-specific letter spacing reset (Arabic doesn't need letter-spacing) */
+html[lang="ar"] .eyebrow,
+html[lang="ar"] .btn,
+html[lang="ar"] .nav-links a,
+html[lang="ar"] .logo span,
+html[lang="ar"] .breadcrumbs{
+  letter-spacing: 0;
+}
+
+/* Keep eyebrow slight tracking for visual rhythm */
+html[lang="ar"] .eyebrow{
+  letter-spacing: .08em;
+}
+
+/* ===== RTL Layout Flips ===== */
+
+/* Header / Nav */
+html[dir="rtl"] .nav-inner{
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .nav-links{
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .nav-cta{
+  margin-left: 0;
+  margin-right: 12px;
+}
+
+html[dir="rtl"] .nav-links a.active::after{
+  right: 0;
+  left: auto;
+}
+
+/* Logo — keep brand name LTR but align right */
+html[dir="rtl"] .logo{
+  text-align: right;
+}
+
+/* Breadcrumbs */
+html[dir="rtl"] .breadcrumbs{
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .breadcrumbs .sep{
+  transform: scaleX(-1);
+}
+
+/* Split layout */
+html[dir="rtl"] .split{
+  direction: rtl;
+}
+
+html[dir="rtl"] .split.reverse{
+  direction: ltr;
+}
+
+html[dir="rtl"] .split.reverse > *{
+  direction: rtl;
+}
+
+/* Yacht card tags */
+html[dir="rtl"] .yacht-card .tag{
+  left: auto;
+  right: 16px;
+}
+
+/* Card actions */
+html[dir="rtl"] .card-actions{
+  flex-direction: row-reverse;
+}
+
+/* CTA row */
+html[dir="rtl"] .cta-row{
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+html[dir="rtl"] .cta-row.center,
+html[dir="rtl"] .cta-row[style*="justify-content:center"]{
+  justify-content: center;
+}
+
+/* Divider */
+html[dir="rtl"] .divider{
+  margin-right: 0;
+  margin-left: auto;
+}
+
+html[dir="rtl"] .divider.center-el{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Contact methods */
+html[dir="rtl"] .contact-method{
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .contact-method .ic{
+  margin-right: 0;
+  margin-left: 16px;
+}
+
+/* Tag list */
+html[dir="rtl"] .tag-list{
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* Steps */
+html[dir="rtl"] .steps{
+  flex-direction: row-reverse;
+}
+
+/* Feature grid numbers */
+html[dir="rtl"] .feature-grid .num,
+html[dir="rtl"] .step .idx{
+  text-align: right;
+}
+
+/* Form fields */
+html[dir="rtl"] .form-field label{
+  text-align: right;
+}
+
+html[dir="rtl"] .form-field input{
+  text-align: right;
+}
+
+html[dir="rtl"] .form-note{
+  text-align: right;
+}
+
+/* Footer */
+html[dir="rtl"] .footer-top{
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .footer-bottom{
+  flex-direction: row-reverse;
+}
+
+/* Floating contact widget */
+html[dir="rtl"] .floating-contact{
+  right: auto;
+  left: 24px;
+}
+
+html[dir="rtl"] .fc-menu{
+  right: auto;
+  left: 0;
+}
+
+html[dir="rtl"] .fc-label{
+  margin-right: 0;
+  margin-left: 12px;
+}
+
+/* Lightbox navigation */
+html[dir="rtl"] .lb-prev{
+  left: auto;
+  right: 20px;
+}
+
+html[dir="rtl"] .lb-next{
+  right: auto;
+  left: 20px;
+}
+
+/* Scroll cue */
+html[dir="rtl"] .scroll-cue span:first-child{
+  direction: ltr;
+}
+
+/* Skip link */
+html[dir="rtl"] .skip-link{
+  left: auto;
+  right: 12px;
+}
+
+/* Language toggle button */
+.lang-toggle{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .78rem;
+  letter-spacing: .04em;
+  color: var(--text);
+  opacity: .85;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  transition: all .3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.lang-toggle:hover{
+  border-color: var(--gold);
+  color: var(--gold-light);
+  opacity: 1;
+}
+
+.lang-toggle .lang-current{
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.lang-toggle .lang-sep{
+  opacity: .3;
+}
+
+/* Mobile menu language toggle */
+.mobile-menu .lang-toggle{
+  margin-top: 12px;
+  border-color: var(--gold-dim);
+}
+
+/* Ensure nav accommodates language toggle */
+@media (max-width: 920px){
+  .nav-cta{
+    display: none;
+  }
+  .nav-lang{
+    display: none;
+  }
+  .mobile-menu .lang-toggle{
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 921px){
+  .nav-lang{
+    margin-left: 12px;
+  }
+  .mobile-menu .lang-toggle{
+    display: none;
+  }
+}
+
+/* Arabic-specific body adjustments */
+html[lang="ar"] .lead{
+  line-height: 1.8;
+}
+
+html[lang="ar"] p{
+  line-height: 1.85;
+}
+
+html[lang="ar"] .h1{
+  line-height: 1.25;
+}
+
+html[lang="ar"] .h2{
+  line-height: 1.3;
+}
+
+/* Numbers stay LTR */
+html[dir="rtl"] .price{
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+html[dir="rtl"] .step .idx,
+html[dir="rtl"] .feature-grid .num{
+  direction: ltr;
+}
