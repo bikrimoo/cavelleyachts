@@ -1,17 +1,15 @@
-// CavelleYachts — main.js
 (function(){
   "use strict";
 
-  /* Header scroll state */
   var header = document.querySelector('.site-header');
   function onScroll(){
     if(!header) return;
-    if(window.scrollY > 40){ header.classList.add('solid'); } else { header.classList.remove('solid'); }
+    if(window.scrollY > 40){ header.classList.add('solid'); }
+    else { header.classList.remove('solid'); }
   }
-  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* Mobile menu */
   var toggle = document.querySelector('.nav-toggle');
   var mobileMenu = document.querySelector('.mobile-menu');
   if(toggle && mobileMenu){
@@ -28,7 +26,6 @@
     });
   }
 
-  /* Floating contact widget */
   var fc = document.querySelector('.floating-contact');
   if(fc){
     var fcToggle = fc.querySelector('.fc-toggle');
@@ -41,7 +38,6 @@
     });
   }
 
-  /* FAQ accordion */
   document.querySelectorAll('.faq-item').forEach(function(item){
     var q = item.querySelector('.faq-q');
     var a = item.querySelector('.faq-a');
@@ -59,7 +55,6 @@
     });
   });
 
-  /* Tabs (interior showcase) */
   document.querySelectorAll('.tabs').forEach(function(tabGroup){
     var buttons = tabGroup.querySelectorAll('button');
     var targetSel = tabGroup.getAttribute('data-target');
@@ -76,7 +71,6 @@
     });
   });
 
-  /* Gallery filters */
   var filterBar = document.querySelector('.gallery-filters');
   if(filterBar){
     var items = document.querySelectorAll('.gallery-grid .g-item');
@@ -93,14 +87,12 @@
     });
   }
 
-  /* Lightbox */
   var lightbox = document.querySelector('.lightbox');
   if(lightbox){
     var lbImg = lightbox.querySelector('img');
     var lbCap = lightbox.querySelector('.lb-cap');
     var gallery = Array.prototype.slice.call(document.querySelectorAll('[data-lightbox]'));
     var current = 0;
-
     function openAt(i){
       if(!gallery.length) return;
       current = (i + gallery.length) % gallery.length;
@@ -114,13 +106,16 @@
     }
     gallery.forEach(function(el, i){
       el.addEventListener('click', function(){ openAt(i); });
-      el.setAttribute('tabindex','0');
+      el.setAttribute('tabindex', '0');
       el.addEventListener('keypress', function(e){ if(e.key === 'Enter') openAt(i); });
     });
     var closeBtn = lightbox.querySelector('.lb-close');
     var prevBtn = lightbox.querySelector('.lb-prev');
     var nextBtn = lightbox.querySelector('.lb-next');
-    function close(){ lightbox.classList.remove('open'); document.body.classList.remove('menu-open'); }
+    function close(){
+      lightbox.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    }
     if(closeBtn) closeBtn.addEventListener('click', close);
     if(prevBtn) prevBtn.addEventListener('click', function(){ openAt(current - 1); });
     if(nextBtn) nextBtn.addEventListener('click', function(){ openAt(current + 1); });
@@ -133,22 +128,28 @@
     });
   }
 
-  /* Inquiry form -> Netlify AJAX submit with inline success */
-  document.querySelectorAll('form[data-netlify-form]').forEach(function(form){
+  /* Inquiry form -> AJAX submit to Formspree with inline success (falls back to native submit) */
+  document.querySelectorAll('form[data-ajax-form]').forEach(function(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var data = new FormData(form);
-      fetch('/', { method: 'POST', body: data })
-        .then(function(){
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response){
+        if(response.ok){
           form.style.display = 'none';
           var success = form.parentElement.querySelector('.form-success');
           if(success) success.classList.add('show');
-        })
-        .catch(function(){
-          // Fallback: allow native submission if fetch fails
+        } else {
           form.removeEventListener('submit', arguments.callee);
           form.submit();
-        });
+        }
+      }).catch(function(){
+        form.removeEventListener('submit', arguments.callee);
+        form.submit();
+      });
     });
   });
 
@@ -162,17 +163,12 @@
           io.unobserve(entry.target);
         }
       });
-    }, {threshold:0.12});
+    }, { threshold: 0.12 });
     revealEls.forEach(function(el){ io.observe(el); });
   } else {
     revealEls.forEach(function(el){ el.classList.add('in-view'); });
   }
-
-  /* Fallback: ensure reveal elements become visible after 3 seconds,
-     even if IntersectionObserver fails (e.g., CSS loading delays on mobile RTL) */
   setTimeout(function(){
-    document.querySelectorAll(".reveal:not(.in-view)").forEach(function(el){
-      el.classList.add("in-view");
-    });
+    document.querySelectorAll(".reveal:not(.in-view)").forEach(function(el){ el.classList.add("in-view"); });
   }, 3000);
 })();

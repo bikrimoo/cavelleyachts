@@ -94,9 +94,10 @@
       </div>
       <div class="reveal">
         
-<form name="yacht-inquiry" method="POST" data-netlify="true" data-netlify-form netlify-honeypot="bot-field" action="/ar/thank-you/">
-  <input type="hidden" name="form-name" value="yacht-inquiry">
-  <p class="visually-hidden"><label>لا تملأ هذا الحقل: <input name="bot-field"></label></p>
+<form name="yacht-inquiry" method="POST" data-ajax-form action="https://formspree.io/f/xqpzrgzr">
+  <input type="hidden" name="_subject" value="New Yacht Enquiry — Contact Page (AR)">
+  <input type="hidden" name="_next" value="https://cavelleyachts.com/ar/thank-you/">
+  <p class="visually-hidden"><label>لا تملأ هذا الحقل: <input name="_gotcha"></label></p>
   <div class="form-grid">
     <div class="form-field"><label for="full_name">الاسم الكامل</label><input type="text" id="full_name" name="full_name" required></div>
     <div class="form-field"><label for="email">البريد الإلكتروني</label><input type="email" id="email" name="email" required></div>
