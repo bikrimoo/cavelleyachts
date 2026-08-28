@@ -248,21 +248,23 @@ html[dir="rtl"] .skip-link{
   border-color: var(--gold-dim);
 }
 
-/* Ensure nav accommodates language toggle */
+/* Header lang-toggle: keep on the right side next to hamburger on mobile;
+   hide the duplicate from the mobile menu to prevent centered repetition */
 @media (max-width: 920px){
   .nav-cta{
     display: none;
   }
-  .nav-lang{
-    display: none;
+  .nav-inner > .lang-toggle{
+    margin-left: auto;
+    margin-right: 14px;
   }
   .mobile-menu .lang-toggle{
-    display: inline-flex;
+    display: none;
   }
 }
 
 @media (min-width: 921px){
-  .nav-lang{
+  .nav-inner > .lang-toggle{
     margin-left: 12px;
   }
   .mobile-menu .lang-toggle{

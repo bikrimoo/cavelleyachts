@@ -119,6 +119,19 @@ body.menu-open{overflow:hidden;}
   .nav-links{display:none;}
   .nav-toggle{display:flex;}
   .nav-cta{display:none;}
+  .nav-inner > .lang-toggle{margin-left:auto; margin-right:14px; display:inline-flex; align-items:center; gap:6px; font-size:.78rem; color:var(--text); opacity:.85; padding:6px 14px; border:1px solid var(--line); white-space:nowrap; cursor:pointer; transition:all .3s ease;}
+  .nav-inner > .lang-toggle:hover{border-color:var(--gold); color:var(--gold-light); opacity:1;}
+  .nav-inner > .lang-toggle .lang-current{color:var(--gold); font-weight:500;}
+  .nav-inner > .lang-toggle .lang-sep{opacity:.3;}
+  .mobile-menu .lang-toggle{display:none;}
+}
+
+@media (min-width:921px){
+  .nav-inner > .lang-toggle{margin-left:12px; display:inline-flex; align-items:center; gap:6px; font-size:.78rem; color:var(--text); opacity:.85; padding:6px 14px; border:1px solid var(--line); white-space:nowrap; cursor:pointer; transition:all .3s ease;}
+  .nav-inner > .lang-toggle:hover{border-color:var(--gold); color:var(--gold-light); opacity:1;}
+  .nav-inner > .lang-toggle .lang-current{color:var(--gold); font-weight:500;}
+  .nav-inner > .lang-toggle .lang-sep{opacity:.3;}
+  .mobile-menu .lang-toggle{display:none;}
 }
 
 /* ---------- Hero ---------- */
