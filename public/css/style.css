@@ -87,12 +87,12 @@ section{position:relative;}
 .site-header{
   position:fixed; top:0; left:0; right:0; z-index:1000;
   height:var(--nav-h); display:flex; align-items:center;
-  background:transparent; transition:background .35s ease, border-color .35s ease, height .3s ease;
-  border-bottom:1px solid transparent;
+  background:rgba(7,26,47,0.88); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+  transition:height .3s ease, background .35s ease;
 }
 .site-header.solid{
-  background:rgba(10,12,18,0.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line); height:72px;
+  height:72px;
 }
 .nav-inner{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 28px; display:flex; align-items:center; justify-content:space-between;}
 .logo{font-family:var(--serif); font-size:1.5rem; letter-spacing:.03em; color:var(--text); display:flex; flex-direction:column; line-height:1;}
