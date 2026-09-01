@@ -98,7 +98,7 @@ section{position:relative;}
 .logo{font-family:var(--serif); font-size:1.5rem; letter-spacing:.03em; color:var(--text); display:flex; align-items:center; gap:12px; line-height:1;}
 .logo-icon{height:40px; width:40px; border-radius:8px; flex-shrink:0; display:block;}
 .logo-text{display:flex; flex-direction:column; line-height:1;}
-.logo-name{font-size:2.6rem; letter-spacing:0; color:#fff; font-weight:600;}
+.logo-name{font-size:2.1rem; letter-spacing:0; color:#fff; font-weight:600;}
 .logo span{font-family:var(--sans); font-size:.6rem; letter-spacing:.32em; color:var(--gold); text-transform:uppercase; margin-top:4px;}
 .nav-links{display:flex; align-items:center; gap:34px;}
 .nav-links a{font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; color:var(--text); opacity:.85; position:relative; padding:6px 0;}
@@ -122,7 +122,7 @@ body.menu-open{overflow:hidden;}
   .nav-links{display:none;}
   .nav-toggle{display:flex;}
   .nav-cta{display:none;}
-  .logo-name{font-size:1.9rem;}
+  .logo-name{font-size:1.7rem;}
   .nav-inner > .lang-toggle{margin-left:auto; margin-right:14px; display:inline-flex; align-items:center; gap:6px; font-size:.78rem; color:var(--text); opacity:.85; padding:6px 14px; border:1px solid var(--line); white-space:nowrap; cursor:pointer; transition:all .3s ease;}
   .nav-inner > .lang-toggle:hover{border-color:var(--gold); color:var(--gold-light); opacity:1;}
   .nav-inner > .lang-toggle .lang-current{color:var(--gold); font-weight:500;}
