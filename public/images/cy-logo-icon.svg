@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <linearGradient id="cyGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f0d29a"/>
+      <stop offset="45%" stop-color="#d3a256"/>
+      <stop offset="100%" stop-color="#a8672c"/>
+    </linearGradient>
+    <clipPath id="cyTile">
+      <rect x="0" y="0" width="200" height="200" rx="26"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#cyTile)">
+    <rect width="200" height="200" fill="#071A2F"/>
+
+    <text x="66" y="120" font-family="Playfair Display, Georgia, serif" font-weight="600"
+          font-size="108" text-anchor="middle" fill="url(#cyGold)">C</text>
+    <text x="113" y="128" font-family="Playfair Display, Georgia, serif" font-weight="600"
+          font-size="86" text-anchor="middle" fill="url(#cyGold)">Y</text>
+
+    <path d="M 48 148
+             C 60 138, 72 138, 84 148
+             C 96 158, 108 158, 120 148
+             C 132 138, 144 138, 156 148
+             L 156 156
+             C 144 146, 132 146, 120 156
+             C 108 166, 96 166, 84 156
+             C 72 146, 60 146, 48 156
+             Z"
+          fill="url(#cyGold)"/>
+
+    <path d="M 44 168
+             C 56 158, 68 158, 80 168
+             C 92 178, 104 178, 116 168
+             C 128 158, 140 158, 152 168
+             L 152 176
+             C 140 166, 128 166, 116 176
+             C 104 186, 92 186, 80 176
+             C 68 166, 56 166, 44 176
+             Z"
+          fill="url(#cyGold)" opacity="0.85"/>
+  </g>
+</svg>
