@@ -98,6 +98,7 @@ section{position:relative;}
 .logo{font-family:var(--serif); font-size:1.5rem; letter-spacing:.03em; color:var(--text); display:flex; align-items:center; gap:12px; line-height:1;}
 .logo-icon{height:40px; width:40px; border-radius:8px; flex-shrink:0; display:block;}
 .logo-text{display:flex; flex-direction:column; line-height:1;}
+.logo-name{font-size:1.85rem; letter-spacing:.04em; color:#fff; font-weight:500;}
 .logo span{font-family:var(--sans); font-size:.6rem; letter-spacing:.32em; color:var(--gold); text-transform:uppercase; margin-top:4px;}
 .nav-links{display:flex; align-items:center; gap:34px;}
 .nav-links a{font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; color:var(--text); opacity:.85; position:relative; padding:6px 0;}
