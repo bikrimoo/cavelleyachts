@@ -96,7 +96,8 @@ section{position:relative;}
 }
 .nav-inner{width:100%; max-width:var(--maxw); margin:0 auto; padding:0 28px; display:flex; align-items:center; justify-content:space-between;}
 .logo{font-family:var(--serif); font-size:1.5rem; letter-spacing:.03em; color:var(--text); display:flex; align-items:center; gap:12px; line-height:1;}
-.logo-icon{height:40px; width:40px; border-radius:8px; flex-shrink:0; display:block;}
+.logo-icon{height:40px; width:40px; border-radius:10px; flex-shrink:0; display:block; transition:transform .3s ease, box-shadow .3s ease; box-shadow:0 0 0 1px rgba(197,169,130,.15);}
+.logo:hover .logo-icon{transform:scale(1.05); box-shadow:0 4px 16px rgba(197,169,130,.2), 0 0 0 1px rgba(197,169,130,.3);}
 .logo-text{display:flex; flex-direction:column; line-height:1;}
 .logo span{font-family:var(--sans); font-size:.6rem; letter-spacing:.32em; color:var(--gold); text-transform:uppercase; margin-top:4px;}
 .nav-links{display:flex; align-items:center; gap:34px;}
