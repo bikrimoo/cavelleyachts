@@ -12,6 +12,11 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history - reliable per-page lastmod dates
+
+      - name: Generate sitemap (auto-discovers routes + validates XML)
+        run: python3 scripts/generate_sitemap.py
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
