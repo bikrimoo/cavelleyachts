@@ -187,6 +187,7 @@ body.menu-open{overflow:hidden;}
 @media (max-width:860px){
   .split{grid-template-columns:1fr; gap:36px;}
   .split img{aspect-ratio:16/11;}
+  .split img.intro-photo{aspect-ratio:4/5;}
 }
 
 /* ---------- Cards / Yachts ---------- */
