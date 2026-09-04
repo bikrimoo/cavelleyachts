@@ -1,4 +1,4 @@
-/* CavelleYachts — i18n Language Switching
+/* Cavelle — i18n Language Switching
    Handles EN ↔ AR language detection, toggle, and persistence */
 
 (function(){

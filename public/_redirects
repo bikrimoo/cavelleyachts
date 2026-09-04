@@ -1,0 +1,9 @@
+# Cavelle rebrand: yacht brokerage -> luxury floating assets
+/yachts /floating-assets 301
+/yachts/* /floating-assets/:splat 301
+/find-your-yacht /find-your-asset 301
+/find-your-yacht/* /find-your-asset/:splat 301
+/ar/yachts /ar/floating-assets 301
+/ar/yachts/* /ar/floating-assets/:splat 301
+/ar/find-your-yacht /ar/find-your-asset 301
+/ar/find-your-yacht/* /ar/find-your-asset/:splat 301

@@ -1,4 +1,4 @@
-/* CavelleYachts — Shared UI Translations (EN ↔ AR)
+/* Cavelle — Shared UI Translations (EN ↔ AR)
    Used for nav, footer, buttons, and other shared UI strings */
 
 window.CAV = window.CAV || {};
@@ -6,8 +6,8 @@ window.CAV.translations = {
   en: {
     nav: {
       home: 'Home',
-      yachts: 'Yachts',
-      findYourYacht: 'Find Your Yacht',
+      yachts: 'Floating Assets',
+      findYourYacht: 'Find Your Asset',
       lifestyle: 'Lifestyle',
       investment: 'Investment',
       gallery: 'Gallery',
@@ -18,18 +18,18 @@ window.CAV.translations = {
     },
     cta: {
       requestInfo: 'Request Information',
-      exploreYachts: 'Explore Available Yachts',
-      findYourYacht: 'Find Your Yacht',
+      exploreYachts: 'Explore Available Floating Assets',
+      findYourYacht: 'Find Your Asset',
       contactSales: 'Contact Sales',
-      viewYacht: 'View Yacht',
+      viewYacht: 'View Asset',
       requestDetails: 'Request Details'
     },
     footer: {
       explore: 'Explore',
       company: 'Company',
       connect: 'Connect',
-      availableYachts: 'Available Yachts',
-      findYourYacht: 'Find Your Yacht',
+      availableYachts: 'Available Floating Assets',
+      findYourYacht: 'Find Your Asset',
       about: 'About',
       paymentOptions: 'Payment Options',
       faq: 'FAQ',
@@ -41,8 +41,8 @@ window.CAV.translations = {
   ar: {
     nav: {
       home: 'الرئيسية',
-      yachts: 'اليخوت',
-      findYourYacht: 'ابحث عن يختك',
+      yachts: 'الأصول العائمة',
+      findYourYacht: 'اعثر على أصولك',
       lifestyle: 'نمط الحياة',
       investment: 'الاستثمار',
       gallery: 'المعرض',
@@ -53,18 +53,18 @@ window.CAV.translations = {
     },
     cta: {
       requestInfo: 'طلب معلومات',
-      exploreYachts: 'استكشف اليخوت المتاحة',
-      findYourYacht: 'ابحث عن يختك',
+      exploreYachts: 'استكشف الأصول العائمة المتاحة',
+      findYourYacht: 'اعثر على أصولك',
       contactSales: 'تواصل مع المبيعات',
-      viewYacht: 'عرض اليخت',
+      viewYacht: 'عرض الأصل',
       requestDetails: 'طلب التفاصيل'
     },
     footer: {
       explore: 'استكشف',
       company: 'الشركة',
       connect: 'تواصل',
-      availableYachts: 'اليخوت المتاحة',
-      findYourYacht: 'ابحث عن يختك',
+      availableYachts: 'الأصول العائمة المتاحة',
+      findYourYacht: 'اعثر على أصولك',
       about: 'من نحن',
       paymentOptions: 'خيارات الدفع',
       faq: 'الأسئلة الشائعة',
