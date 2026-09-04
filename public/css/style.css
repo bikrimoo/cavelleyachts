@@ -383,3 +383,9 @@ body.menu-open{overflow:hidden;}
 /* ---------- Reveal animation ---------- */
 .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
 .reveal.in-view{opacity:1; transform:translateY(0);}
+
+/* ---------- Mobile header logo (mobile only: hide CY icon, text logo shifts left) ---------- */
+@media (max-width:767px){
+  .site-header .logo .logo-icon{display:none;}
+  .site-header .logo{gap:0;}
+}
