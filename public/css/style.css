@@ -55,7 +55,7 @@ section{position:relative;}
 .section-pad{padding:110px 0;}
 .section-pad-sm{padding:70px 0;}
 .center{text-align:center; margin-left:auto; margin-right:auto;}
-.mt-24{margin-top:24px;} .mt-40{margin-top:40px;} .mt-56{margin-top:56px;}
+.mt-8{margin-top:8px;} .mt-24{margin-top:24px;} .mt-40{margin-top:40px;} .mt-56{margin-top:56px;}
 .divider{width:64px; height:1px; background:var(--gold); margin:26px 0;}
 .divider.center-el{margin:26px auto;}
 .grain-overlay::after{
