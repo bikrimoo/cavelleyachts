@@ -388,4 +388,8 @@ body.menu-open{overflow:hidden;}
 @media (max-width:767px){
   .site-header .logo .logo-icon{display:none;}
   .site-header .logo{gap:0;}
+  /* Mobile logo ~10% smaller */
+  .site-header .logo .logo-name{font-size:1.66rem;}
+  .site-header .logo .logo-sub{font-size:.54rem;}
+  .site-header .logo .logo-divider{margin:3px 0 3px;}
 }
