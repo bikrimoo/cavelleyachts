@@ -171,4 +171,35 @@
   setTimeout(function(){
     document.querySelectorAll(".reveal:not(.in-view)").forEach(function(el){ el.classList.add("in-view"); });
   }, 3000);
+  /* Hero video autoplay recovery — MOBILE ONLY.
+     Desktop autoplay stays 100% native/untouched; everything below only runs
+     at (max-width: 767px). Fixes: single-playback-slot contention on iOS,
+     Low Power Mode autoplay block, and muted-property race on older WebKit. */
+  var heroDesktopVideo = document.querySelector('.hero-video--desktop');
+  var heroMobileVideo  = document.querySelector('.hero-video--mobile');
+  var heroIsMobile     = window.matchMedia('(max-width: 767px)');
+
+  if (heroMobileVideo) {
+    var playMobileHero = function () {
+      if (!heroIsMobile.matches) return;               // desktop: do nothing, ever
+      if (heroDesktopVideo) {                           // stop hidden desktop video
+        try { heroDesktopVideo.pause(); } catch (e) {}  // from stealing the iOS
+      }                                                 // inline-playback slot
+      heroMobileVideo.muted = true;
+      try { heroMobileVideo.defaultMuted = true; } catch (e) {}
+      var pr = heroMobileVideo.play();
+      if (pr && pr['catch']) pr['catch'](function () {});
+    };
+
+    playMobileHero();
+    heroMobileVideo.addEventListener('loadeddata', playMobileHero);
+    heroMobileVideo.addEventListener('canplay', playMobileHero);
+    window.addEventListener('scroll', playMobileHero, { passive: true });
+    window.addEventListener('touchstart', playMobileHero, { passive: true });
+    window.addEventListener('click', playMobileHero, { passive: true });
+    document.addEventListener('visibilitychange', function () {
+      if (!document.hidden) playMobileHero();
+    });
+  }
+
 })();
