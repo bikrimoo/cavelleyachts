@@ -162,6 +162,7 @@ body.menu-open{overflow:hidden;}
 .hero-overlay{position:absolute; inset:0; z-index:1;
   background:linear-gradient(180deg, rgba(10,12,18,0.55) 0%, rgba(10,12,18,0.35) 38%, rgba(10,12,18,0.82) 100%);}
 .hero-content{position:relative; z-index:2; max-width:var(--maxw); margin:0 auto; padding:0 28px; width:100%;}
+.hero-overlay.overlay-flat{background:linear-gradient(180deg, rgba(10,12,18,0.72) 0%, rgba(10,12,18,0.66) 40%, rgba(10,12,18,0.8) 100%) !important;}
 .hero-content .eyebrow{color:var(--gold-light);}
 .hero-content .h1{max-width:900px; text-shadow:0 4px 30px rgba(0,0,0,.4);}
 .hero-content .lead{color:var(--text-muted); max-width:600px; margin-top:20px;}
