@@ -303,7 +303,7 @@ body.menu-open{overflow:hidden;}
 .showcase-grid{display:grid; grid-template-columns:2fr 1fr; gap:16px;}
 .showcase-grid img{width:100%; height:100%; object-fit:cover; filter:saturate(1.1) contrast(1.08) brightness(1.04);}
 .showcase-grid .side{display:grid; grid-template-rows:1fr 1fr; gap:16px;}
-.showcase-grid .main{aspect-ratio:1/1;}
+.showcase-grid .main{aspect-ratio:1024/602;}
 @media (max-width:800px){.showcase-grid{grid-template-columns:1fr;} .showcase-grid .side{grid-template-columns:1fr 1fr; grid-template-rows:none;}}
 
 /* ---------- Final CTA banner ---------- */
