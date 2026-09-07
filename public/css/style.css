@@ -406,3 +406,9 @@ body.menu-open{overflow:hidden;}
 @media (min-width:768px){ .hero-media-wrap.media-natural .container{padding:56px 22px 90px;} }
 
 
+
+/* Tighter section spacing on mobile — 220px blank gap between stacked sections felt excessive on small screens */
+@media (max-width:767px){
+  .section-pad{padding:64px 0;}
+  .section-pad-sm{padding:44px 0;}
+}
