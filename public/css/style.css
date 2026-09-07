@@ -405,3 +405,11 @@ body.menu-open{overflow:hidden;}
   .hero-media-wrap.media-natural .hero-overlay{top:0;left:0;right:0;bottom:auto;height:87.8vw;background:linear-gradient(180deg,rgba(10,12,18,0.26) 0%,rgba(10,12,18,0.10) 45%,rgba(10,12,18,0.52) 100%) !important;}
   .hero-media-wrap.media-natural .container{padding:34px 22px 46px;}
 }
+
+/* Lifestyle band: desktop/tablet matches the mobile treatment — bright full-bleed image (light overlay only), text below on section background */
+@media (min-width:768px){
+  .hero-media-wrap.media-natural{display:block !important;min-height:0 !important;padding:0 !important;}
+  .hero-media-wrap.media-natural .hero-media{position:relative;width:100%;height:64vh;max-height:760px;overflow:hidden;}
+  .hero-media-wrap.media-natural .hero-overlay{top:0;left:0;right:0;bottom:auto;height:64vh;max-height:760px;background:linear-gradient(180deg,rgba(10,12,18,0.26) 0%,rgba(10,12,18,0.10) 45%,rgba(10,12,18,0.52) 100%) !important;}
+  .hero-media-wrap.media-natural .container{padding:56px 22px 90px;}
+}
