@@ -4,5 +4,3 @@
 
 /* Tighter section spacing on mobile — 220px blank gap between stacked sections felt excessive on small screens */
 @media (max-width:767px){.section-pad{padding:64px 0;}.section-pad-sm{padding:44px 0;}}
-/* Keep the added Blog link from crowding the existing desktop navigation. */
-@media (min-width:921px) and (max-width:1350px){.nav-links{display:none}.nav-toggle{display:flex}}

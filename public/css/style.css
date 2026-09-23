@@ -414,5 +414,3 @@ body.menu-open{overflow:hidden;}
   .section-pad{padding:64px 0;}
   .section-pad-sm{padding:44px 0;}
 }
-/* Keep the added Blog link from crowding the existing desktop navigation. */
-@media (min-width:921px) and (max-width:1350px){.nav-links{display:none}.nav-toggle{display:flex}}

@@ -13,6 +13,14 @@ import re
 from urllib.parse import urlsplit
 
 BASE = 'https://www.cavelleyachts.com'
+# Keep in sync with the CSS version used by the hand-authored pages.
+CSS_VERSION = '20260913'
+# Match the existing site font systems: EN pages load Playfair Display + Jost,
+# AR pages load Amiri + Noto Sans Arabic (see public/ar/*/index.html).
+FONTS = {
+    'en': 'https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap',
+    'ar': 'https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Arabic:wght@300;400;500;600;700&display=swap',
+}
 SLUG = re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
 LANGS = {'en': '', 'ar': 'ar/'}
 LABEL = {
@@ -258,8 +266,8 @@ def shell(public, lang, path, title, description, image, contents, schema, *, ar
             f'<link rel="icon" href="/favicon.svg" type="image/svg+xml">\n'
             f'<link rel="preconnect" href="https://fonts.googleapis.com">\n'
             f'<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
-            f'<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap">\n'
-            f'<link rel="stylesheet" href="/css/style.min.css?v=20260923blog">\n{rtl}'
+            f'<link rel="stylesheet" href="{FONTS[lang]}">\n'
+            f'<link rel="stylesheet" href="/css/style.min.css?v={CSS_VERSION}">\n{rtl}'
             f'<link rel="stylesheet" href="/css/blog.css">\n{structured}\n'
             f'<script src="/js/i18n.js" defer></script>\n</head>\n<body>\n'
             f'<a class="skip-link" href="#main">{e("تخطي إلى المحتوى" if lang == "ar" else "Skip to content")}</a>\n'
