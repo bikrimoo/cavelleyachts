@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "draft",
+  "language": "en",
+  "slug": "replace-with-approved-slug",
+  "title": "Replace with approved article title",
+  "seo_title": "Replace with SEO title | Cavelle",
+  "meta_description": "Replace with the approved search description.",
+  "excerpt": "Replace with a short, accurate summary.",
+  "category": "Floating Living",
+  "author": {"name": "Replace with verified author", "url": "/about/"},
+  "date_published": "2026-09-23",
+  "date_modified": "2026-09-23",
+  "featured_image": {
+    "url": "https://your-public-r2-domain.example/articles/example.webp",
+    "alt": "Replace with a description of the actual image",
+    "width": 1200,
+    "height": 630
+  },
+  "blocks": [
+    {"type": "paragraph", "text": "Replace with approved content."},
+    {"type": "heading", "level": 2, "text": "Replace with section heading"},
+    {"type": "link", "text": "Explore floating assets", "href": "/floating-assets/"}
+  ],
+  "related_slugs": []
+}

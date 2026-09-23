@@ -15,6 +15,9 @@ jobs:
         with:
           fetch-depth: 0 # full history - reliable per-page lastmod dates
 
+      - name: Generate static blog pages from article records
+        run: python3 scripts/build_blog.py
+
       - name: Generate sitemap (auto-discovers routes + validates XML)
         run: python3 scripts/generate_sitemap.py
 
