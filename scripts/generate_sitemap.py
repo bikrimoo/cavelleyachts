@@ -22,6 +22,7 @@ lastmod:
 """
 
 import argparse
+import json
 import re
 import subprocess
 import sys
@@ -108,6 +109,26 @@ def git_lastmod(page_file: Path):
     return None
 
 
+def blog_source_lastmod(root: Path, route: str):
+    """Use verified article metadata, not Git timestamps of CI-generated HTML."""
+    parts = [part for part in route.strip("/").split("/") if part]
+    lang = "ar" if parts and parts[0] == "ar" else "en"
+    if lang == "ar":
+        parts = parts[1:]
+    if not parts or parts[0] != "blog" or len(parts) > 2:
+        return None
+    source = root.parent / "articles"
+    dates = []
+    for path in source.glob("*.json"):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if data.get("status") != "published" or data.get("language") != lang:
+            continue
+        if len(parts) == 2 and data.get("slug") != parts[1]:
+            continue
+        dates.append(data["date_modified"])
+    return max(dates) if dates else None
+
+
 def build_urls(root: Path, base_url: str, use_lastmod: bool):
     routes = discover_routes(root)
     redirect_sources = parse_redirect_sources(root)
@@ -130,7 +151,8 @@ def build_urls(root: Path, base_url: str, use_lastmod: bool):
     urls = []
     for route, path in entries:
         loc = base_url.rstrip("/") + route
-        lastmod = git_lastmod(path) if use_lastmod else None
+        is_blog = route.startswith("/blog/") or route.startswith("/ar/blog/")
+        lastmod = (blog_source_lastmod(root, route) if is_blog else git_lastmod(path)) if use_lastmod else None
         urls.append((loc, lastmod))
     return urls, excluded
 
