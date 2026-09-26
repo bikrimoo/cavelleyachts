@@ -12,7 +12,7 @@
   "workers_dev": true,
   "vars": {
     "SHEET_NAME": "Website Orders",
-    "TAB_NAME": "Cavellyachts",
+    "TAB_NAME": "Cavelleyachts",
     "ALLOWED_ORIGIN": "*"
   }
 }

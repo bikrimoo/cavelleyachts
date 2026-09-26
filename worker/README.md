@@ -1,14 +1,14 @@
 # Cavelle Enquiries Worker
 
-Independent Cloudflare Worker that receives Cavellyachts enquiry-form
+Independent Cloudflare Worker that receives Cavelleyachts enquiry-form
 submissions and appends them to the **Website Orders** spreadsheet,
-tab **Cavellyachts** — in parallel with Formspree (both paths are
+tab **Cavelleyachts** — in parallel with Formspree (both paths are
 independent; the site sends to both with the same `CVL-` reference).
 
 - Endpoint: `POST /orders` (JSON)
 - Runtime secret: `GOOGLE_SERVICE_ACCOUNT_JSON` (same Google service account
   as the Veloria worker — set it in Cloudflare dashboard/CLI, never in the repo)
-- Vars: `SHEET_NAME=Website Orders`, `TAB_NAME=Cavellyachts`, `ALLOWED_ORIGIN=*`
+- Vars: `SHEET_NAME=Website Orders`, `TAB_NAME=Cavelleyachts`, `ALLOWED_ORIGIN=*`
 
 Payload fields: `order_id`, `source`, `lang`, `full_name`, `email`, `phone`,
 `country`, `budget`/`budget_range`, `looking_for`, `preferred_length`,

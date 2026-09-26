@@ -1,9 +1,9 @@
 /**
  * Cavelle Yachts Enquiries API — Cloudflare Worker
  *
- * Independent backend for the Cavellyachts enquiry forms. Receives
+ * Independent backend for the Cavelleyachts enquiry forms. Receives
  * submissions in parallel with Formspree and appends them to the Google
- * Sheet "Website Orders" (tab "Cavellyachts") using the same Google
+ * Sheet "Website Orders" (tab "Cavelleyachts") using the same Google
  * service account as the Veloria worker.
  *
  * No platform dependency: plain Cloudflare Workers + Google Sheets API v4.
@@ -14,7 +14,7 @@
  *   GOOGLE_SERVICE_ACCOUNT_JSON  (secret)   Full JSON key of the Google service account
  *   ALLOWED_ORIGIN               (optional) Restrict CORS, e.g. "https://cavelleyachts.com"
  *   SHEET_NAME / TAB_NAME        (vars)     Spreadsheet and tab name.
- *                                           Default: Website Orders / Cavellyachts.
+ *                                           Default: Website Orders / Cavelleyachts.
  */
 
 const SHEETS_API = "https://sheets.googleapis.com/v4/spreadsheets";
@@ -125,7 +125,7 @@ async function resolveSpreadsheetId(env, token) {
     if (files && files.length > 0) return files[0].id;
   }
 
-  const tabName = env.TAB_NAME || "Cavellyachts";
+  const tabName = env.TAB_NAME || "Cavelleyachts";
   const created = await fetch(SHEETS_API, {
     method: "POST",
     headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
@@ -142,7 +142,7 @@ async function resolveSpreadsheetId(env, token) {
 
 /** Make sure the tab and its header row exist, return the tab name. */
 async function ensureTabAndHeader(spreadsheetId, env, token) {
-  const tabName = env.TAB_NAME || "Cavellyachts";
+  const tabName = env.TAB_NAME || "Cavelleyachts";
 
   const meta = await fetch(`${SHEETS_API}/${spreadsheetId}?fields=sheets.properties.title`, {
     headers: { Authorization: `Bearer ${token}` },
