@@ -1,0 +1,18 @@
+// Cavelle Yachts Enquiries Worker — deployment config.
+// Mirrors the Veloria worker structure, kept intentionally separate.
+//
+//   GOOGLE_SERVICE_ACCOUNT_JSON is a RUNTIME SECRET (never stored in the repo):
+//     npx wrangler secret put GOOGLE_SERVICE_ACCOUNT_JSON   (paste the full JSON key)
+//
+// Deploy from this folder:  npx wrangler deploy
+{
+  "name": "cavelle-enquiries",
+  "main": "main.js",
+  "compatibility_date": "2026-08-30",
+  "workers_dev": true,
+  "vars": {
+    "SHEET_NAME": "Website Orders",
+    "TAB_NAME": "Cavellyachts",
+    "ALLOWED_ORIGIN": "*"
+  }
+}

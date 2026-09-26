@@ -1,6 +1,49 @@
 (function(){
   "use strict";
 
+  /* Enquiries Google-Sheets sync (Cloudflare Worker) — ENDPOINT CONFIG.
+     Public URL, not a secret. Swap it to move the sync, or set to '' to disable. */
+  var CAVELLE_ENQUIRY_SYNC_URL = 'https://cavelle-enquiries.oxivena01.workers.dev/orders';
+
+  /* Shared CVL- reference: the same one goes to Formspree and Google Sheets. */
+  function makeEnquiryRef(){
+    var d = new Date();
+    var pad = function(n){ return (n < 10 ? '0' : '') + n; };
+    return 'CVL-' + d.getFullYear() + pad(d.getMonth() + 1) + pad(d.getDate()) +
+      '-' + Math.random().toString(36).slice(2, 7).toUpperCase();
+  }
+
+  /* Independent parallel send to the worker (Google Sheets). Best-effort only:
+     it never blocks the Formspree submission or the inline success message. */
+  function syncEnquiryToSheets(form, ref){
+    if(!CAVELLE_ENQUIRY_SYNC_URL) return;
+    try{
+      var data = new FormData(form);
+      var subject = form.querySelector('input[name="_subject"]');
+      var payload = {
+        order_id: ref,
+        source: (subject && subject.value) ? subject.value : location.pathname,
+        lang: location.pathname.indexOf('/ar/') === 0 ? 'ar' : 'en',
+        full_name: data.get('full_name') || '',
+        email: data.get('email') || '',
+        phone: data.get('phone') || '',
+        country: data.get('country') || '',
+        budget: data.get('budget') || data.get('budget_range') || '',
+        looking_for: data.get('looking_for') || '',
+        preferred_length: data.get('preferred_length') || '',
+        purchase_timeline: data.get('purchase_timeline') || '',
+        description: data.get('description') || '',
+        message: data.get('message') || '',
+        website: ''
+      };
+      fetch(CAVELLE_ENQUIRY_SYNC_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(function(){ /* sync is best-effort only */ });
+    }catch(err){ /* never block the main submission */ }
+  }
+
   var header = document.querySelector('.site-header');
   function onScroll(){
     if(!header) return;
@@ -133,6 +176,9 @@
     form.addEventListener('submit', function(e){
       e.preventDefault();
       var data = new FormData(form);
+      var enquiryRef = makeEnquiryRef();
+      data.append('enquiry_id', enquiryRef);
+      syncEnquiryToSheets(form, enquiryRef);
       fetch(form.action, {
         method: 'POST',
         body: data,
